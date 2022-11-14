@@ -9,14 +9,14 @@ const Cards = ({data:{confirmed,recovered,deaths,lastUpdate}}) => {
         return "loading..."
     }
     else{
-        console.log(confirmed)
+        // console.log(confirmed)
+        // console.log(recovered)
     }
     return(
         <div className={styles.container}>
-        <Grid container spacing={3} justify="space-between">
+        <Grid container spacing={8}  justify="space-between">
 
-       
-            <Grid item spacing={3} component={Card}  xs={12} md={3}  className={cx(styles.card,styles.infected)}>
+            <Grid item component={Card}  xs={12} md={5}  className={cx(styles.card,styles.infected)}>
                 <CardContent>
                     <Typography color="textSecondary" gutterBottom>Infected</Typography>
                     <Typography variant="h5">  <CountUp start={0}end={confirmed.value}duration={2.5}seperator=","/>
@@ -26,7 +26,7 @@ const Cards = ({data:{confirmed,recovered,deaths,lastUpdate}}) => {
                 </CardContent>
             </Grid>
 
-            <Grid item component={Card}  xs={12} md={3}  className={cx(styles.card,styles.recovered)}>
+            {/* <Grid item component={Card}  xs={12} md={3}  className={cx(styles.card,styles.recovered)}>
                 <CardContent>
                     <Typography color="textSecondary" gutterBottom>Recovered</Typography>
                     <Typography variant="h5">
@@ -36,9 +36,9 @@ const Cards = ({data:{confirmed,recovered,deaths,lastUpdate}}) => {
                     <Typography variant="body2">number of recovered cases from covid</Typography>
                 </CardContent>
 
-            </Grid>
+            </Grid> */}
 
-            <Grid item component={Card}  xs={12} md={3}  className={cx(styles.card,styles.deaths)}>
+            <Grid item component={Card}  xs={12} md={5  }  className={cx(styles.card,styles.deaths)}>
                 <CardContent>
                     <Typography color="textSecondary" gutterBottom>Deaths</Typography>
                     <Typography variant="h5">
