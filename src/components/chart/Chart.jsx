@@ -1,76 +1,87 @@
-import React,{useEffect,useState} from "react";
-import { fetchDailyData } from "../../api";
-import {Line,Bar} from "react-chartjs-2";
-import styles from "./Chart.module.css";
+import React, { useState, useEffect } from 'react';
+import { Line, Bar } from 'react-chartjs-2';
 
-const Chart = ({data : { confirmed,deaths,recovered },country}) => {
-    const [dailydata,setdailydata] = useState([]);
+import { fetchData } from '../../api';
 
-    useEffect(()=>{
-        const fetchAPI = async() => {
-            setdailydata(await fetchDailyData());
-        }
-        
-        fetchAPI();
+import styles from './Chart.module.css';
 
-    },[]);
+const Chart = ({ data: { confirmed,recovered,deaths }, country }) => {
+  const [dailyData, setDailyData] = useState({});
 
-    const lineChart = (
-        dailydata.length ? (
-            <Line
-            data={{
-                labels:dailydata.map(({ date })=>(date)),
-                datasets:[{
-                    data:dailydata.map(({confirmed})=>(confirmed)),
-                    label:"Infected",
-                    borderColor:"#3333ff",
-                    fill:true,
-                },
-                {
-                    data:dailydata.map(({deaths})=>(deaths)),
-                    label:"Deaths",
-                    borderColor:"red",
-                    backgroundColor:"rgba(255,0,0,0.5)",
-                    fill:true,
-                }
-            ],
-            }}
-            />) : null
-            
-    );
+  useEffect(() => {
+    const fetchMyAPI = async () => {
+      const initialDailyData = await fetchData();
+      console.log(initialDailyData);
 
+      setDailyData(initialDailyData);
+    };
 
-    const barChart = (
-        confirmed ? 
-        (<Bar
+    fetchMyAPI();
+  }, []);
+
+  const barChart = (
+    confirmed ? (
+      <Bar
         data={{
-            labels:["Infected","Recovered","Deaths"],
-            datasets:[{
-                label:'people',
-                backgroundColor:[
-                    'rgba(0,0,225,0.8)',
-                    'rgba(0,225,0,0.8)',
-                    'rgba(255,0,0,0.8)',
-                ],
-                data:[confirmed.value,recovered.value,deaths.value],
-            }]
-
+          labels: ['Infected','Recovered','Deaths'],
+          datasets: [
+            {
+              label: 'People',
+              backgroundColor: ['rgba(0, 0, 255, 0.5)','rgba(0, 255, 0, 0.5)','rgba(255, 0, 0, 0.5)'],
+              data: [confirmed,recovered,deaths],
+            },
+          ],
         }}
         options={{
-            legend:{display:false},
-            title:{display:true,text:`Current state in ${country} `},
+          legend: { display: false },
+          title: { display: true, text: `Current state in ${country}` },
         }}
+      />
+    ) : null
+  );
 
-        
-        />):null
-    );
-    return(
-        <div className={styles.container}>
+  const lineChart = (
+    dailyData[0] ? (
+      <Line
+        data={{
+          labels: dailyData.map(({ date }) => new Date(date).toLocaleDateString()),
+          datasets: [{
+            data: dailyData.map((data) => data.confirmed),
+            label: 'Infected',
+            borderColor: '#3333ff',
+            fill: true,
+          },
+          {
+            data: dailyData.map((data) => data.recovered),
+            label: 'Recovered',
+            borderColor: '#3333ff',
+            fill: true,
+          },
+          {
+            data: dailyData.map((data) => data.deaths),
+            label: 'Deaths',
+            borderColor: 'red',
+            backgroundColor: 'rgba(255, 0, 0, 0.5)',
+            fill: true,
+          }
+          ],
+        }}
+      />
+    ) : null
+  );
 
-            {country ? barChart: lineChart}
+  // {
+  //   data: dailyData.map((data) => data.confirmed),
+  //   label: 'Infected',
+  //   borderColor: '#3333ff',
+  //   fill: true,
+  // }
 
-        </div>
-    )
-}
+  return (
+    <div className={styles.container}>
+      {country ? barChart : lineChart}
+    </div>
+  );
+};
 
 export default Chart;

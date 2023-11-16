@@ -1,28 +1,29 @@
-body{
-    background-image:
-    linear-gradient(to right,rgba(255,255,255,.8) ,rgba(0,0,0,.3)),
-    url("./images/girl.jpg");
-    background-position: 50% 70%;
-    background-size: cover;
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image:linear-gradient(to right,rgba(255,255,255,.9) ,rgba(0,0,0,.8)),url('./images/mask3.jpg');
+  background-size: cover;
+
 }
 
-.container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
 
-.image{
-    width:370px;
-    margin-top: 50px;
+.image {
+  width: 370px;
+  margin-top: 50px;
 }
 
-@media (max-width: 770px){
-    .container{
-        margin:0 10%;
-    }
-    .image{
-        width:100%
-    }
+@media only screen and (max-width: 770px) {
+  .container {
+    margin: 0 10%;
+  }
+
+  .image {
+    width: 100%;
+  }
 }
