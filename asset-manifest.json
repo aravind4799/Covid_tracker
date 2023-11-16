@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/Covid_tracker/static/css/main.c1da3ab4.chunk.css",
-    "main.js": "/Covid_tracker/static/js/main.808488f2.chunk.js",
-    "main.js.map": "/Covid_tracker/static/js/main.808488f2.chunk.js.map",
+    "main.css": "/Covid_tracker/static/css/main.6a036c70.chunk.css",
+    "main.js": "/Covid_tracker/static/js/main.0623d67f.chunk.js",
+    "main.js.map": "/Covid_tracker/static/js/main.0623d67f.chunk.js.map",
     "runtime-main.js": "/Covid_tracker/static/js/runtime-main.ac0f4cb7.js",
     "runtime-main.js.map": "/Covid_tracker/static/js/runtime-main.ac0f4cb7.js.map",
-    "static/js/2.a941fa8b.chunk.js": "/Covid_tracker/static/js/2.a941fa8b.chunk.js",
-    "static/js/2.a941fa8b.chunk.js.map": "/Covid_tracker/static/js/2.a941fa8b.chunk.js.map",
+    "static/js/2.01e5c99e.chunk.js": "/Covid_tracker/static/js/2.01e5c99e.chunk.js",
+    "static/js/2.01e5c99e.chunk.js.map": "/Covid_tracker/static/js/2.01e5c99e.chunk.js.map",
     "index.html": "/Covid_tracker/index.html",
-    "precache-manifest.9dbb865e90dd320b100b3638d5b21192.js": "/Covid_tracker/precache-manifest.9dbb865e90dd320b100b3638d5b21192.js",
+    "precache-manifest.cc02e651eec4c5416932c644983d70d5.js": "/Covid_tracker/precache-manifest.cc02e651eec4c5416932c644983d70d5.js",
     "service-worker.js": "/Covid_tracker/service-worker.js",
-    "static/css/main.c1da3ab4.chunk.css.map": "/Covid_tracker/static/css/main.c1da3ab4.chunk.css.map",
-    "static/js/2.a941fa8b.chunk.js.LICENSE.txt": "/Covid_tracker/static/js/2.a941fa8b.chunk.js.LICENSE.txt",
-    "static/media/App.module.css": "/Covid_tracker/static/media/girl.6ce9d094.jpg",
-    "static/media/image.png": "/Covid_tracker/static/media/image.d7265326.png"
+    "static/css/main.6a036c70.chunk.css.map": "/Covid_tracker/static/css/main.6a036c70.chunk.css.map",
+    "static/js/2.01e5c99e.chunk.js.LICENSE.txt": "/Covid_tracker/static/js/2.01e5c99e.chunk.js.LICENSE.txt",
+    "static/media/image.png": "/Covid_tracker/static/media/image.d7265326.png",
+    "static/media/App.module.css": "/Covid_tracker/static/media/mask3.7eb8bd9e.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.ac0f4cb7.js",
-    "static/js/2.a941fa8b.chunk.js",
-    "static/css/main.c1da3ab4.chunk.css",
-    "static/js/main.808488f2.chunk.js"
+    "static/js/2.01e5c99e.chunk.js",
+    "static/css/main.6a036c70.chunk.css",
+    "static/js/main.0623d67f.chunk.js"
   ]
 }
