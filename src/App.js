@@ -1,7 +1,8 @@
 import React from 'react';
 
-import { cards, countryPicker, chart } from './components';
-import {BrowserRouter} from 'react-router-dom';
+import Cards from './components/cards/Cards';
+import Countrypicker from './components/countrypicker/Countrypicker';
+import Chart from './components/chart/Chart';
 import { fetchData } from './api/';
 import styles from './App.module.css';
 
@@ -32,9 +33,9 @@ class App extends React.Component {
       <div className={styles.container}>
 
         <img className={styles.image} src={image} alt="COVID-19" />
-        <cards data={data} />
-        <countryPicker handleCountryChange={this.handleCountryChange} />
-        <chart data={data} country={country} /> 
+        <Cards data={data} />
+        <Countrypicker handleCountryChange={this.handleCountryChange} />
+        <Chart data={data} country={country} /> 
 
       </div>
     );
